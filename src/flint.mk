@@ -15,14 +15,14 @@ define $(PKG)_BUILD
         --with-gmp-include='$(PREFIX)/$(TARGET)/include' \
         --with-gmp-lib='$(PREFIX)/$(TARGET)/lib' \
         --with-mpfr-include='$(PREFIX)/$(TARGET)/include' \
-        --with-gmp-lib='$(PREFIX)/$(TARGET)/lib' \
+        --with-mpfr-lib='$(PREFIX)/$(TARGET)/lib' \
         --with-blas-include='$(PREFIX)/$(TARGET)/include' \
         --with-blas-lib='$(PREFIX)/$(TARGET)/lib' \
         --with-gc-include='$(PREFIX)/$(TARGET)/include' \
         --with-gc-lib='$(PREFIX)/$(TARGET)/include' \
         --without-ntl
-    $(MAKE) -C '$(SOURCE_DIR)' -j '$(JOBS)'         $(MXE_DISABLE_CRUFT)
-    $(MAKE) -C '$(SOURCE_DIR)' -j '$(JOBS)' install $(MXE_DISABLE_CRUFT)
+    $(MAKE) -C '$(SOURCE_DIR)' -j '$(JOBS)' $(MXE_DISABLE_CRUFT)
+    $(MAKE) -C '$(SOURCE_DIR)' -j 1 install $(MXE_DISABLE_CRUFT)
 
     '$(TARGET)-gcc' \
         -Wall -Werror -ansi -pedantic \
