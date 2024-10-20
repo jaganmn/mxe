@@ -2,10 +2,8 @@
 
 #include <flint/arb.h>
 
-int main(int argc, char *argv[])
+int main(void)
 {
-    (void) argc;
-    (void) argv;
     arb_t x, y;
     int e;
     arb_init(x);
